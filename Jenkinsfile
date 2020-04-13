@@ -44,7 +44,7 @@ pipeline {
     		branch 'master'
     	}
     	steps {
-    		sh "wget --user ${ARTIFACTORY_USR} --password ${ARTIFACTORY_PSW} -O target/smart-test-config.war -nv https://repository.deere.com/artifactory/it-manufacturing-release/com/deere/it/mfg/smart-test-config/${GIT_COMMIT}/smart-test-config-${GIT_COMMIT}.war --server-response --"
+    		sh "wget --user ${ARTIFACTORY_USR} --password ${ARTIFACTORY_PSW} -O target/web-config-api.war -nv https://repository.deere.com/artifactory/it-manufacturing-release/com/deere/it/mfg/smart-test-config/${GIT_COMMIT}/smart-test-config-${GIT_COMMIT}.war --server-response --"
     		sh "cf login -a https://api.cf1.ic.deere.com -u ${CLOUD_FOUNDRY_USR} -p ${CLOUD_FOUNDRY_PSW}"
 			sh "cf target -o manufacturing -s smart-test-dev"
 			sh "cf push --no-start smart-test-config-devl"

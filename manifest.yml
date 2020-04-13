@@ -2,6 +2,6 @@
 applications:
   - buildpack: java_buildpack
     memory: 1024M
-    path: target/smart-test-config.war
+    path: target/web-config-api.war
     env:
       JAVA_OPTS: -Djava.security.egd=file:///dev/urandom -DLOG_DIR=www -Dspring.profiles.active=Devl
